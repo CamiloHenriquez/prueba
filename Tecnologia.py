@@ -1,24 +1,25 @@
 class Tecnologia:
 
-    def __init__(self,voltaje,precio,eficiencia,marca):
-    
+    def __init__(self,marca,voltaje,precio,eficiencia):
+        
+        self.__marca = marca
         self.__voltaje = voltaje
         self.__precio = precio
         self.__eficiencia = eficiencia
-        self.__marca = marca
+        
 
     def calcular_descuento(self):
-        if self.__eficiencia == 'A' or 'B':
-            return 0.5
-        elif self.__eficiencia == 'C' or 'D':
-            return 0.3
-        elif self.__eficiencia == 'E' or 'F':
-            return 0.1
+        if self.__eficiencia in ['A','B']:
+            descuento_eficiencia = 0.5
+        elif self.__eficiencia in ['C','D']:
+            descuento_eficiencia = 0.3
+        elif self.__eficiencia in ['E','F']:
+            descuento_eficiencia = 0.1
         else:
-            return 0
-
-    def cotizar(self):
-        pass
+            descuento_eficiencia = 0
+        
+        total = self.__precio - (self.__precio * descuento_eficiencia)
+        return f"Marca: {self.__marca}\nVoltaje: {self.__voltaje}\nPrecio: ${self.__precio}\nEficiencia: {self.__eficiencia}\nDescuento por eficiencia: {descuento_eficiencia * 100}%\nPrecio total: ${total}"
 
     def get_voltaje(self):
         return self.__voltaje
