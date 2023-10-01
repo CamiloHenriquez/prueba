@@ -18,8 +18,9 @@ class Tecnologia:
         else:
             descuento_eficiencia = 0
         
+        
         total = self.__precio - (self.__precio * descuento_eficiencia)
-        return f"Marca: {self.__marca}\nVoltaje: {self.__voltaje}\nPrecio: ${self.__precio}\nEficiencia: {self.__eficiencia}\nDescuento por eficiencia: {descuento_eficiencia * 100}%\nPrecio total: ${total}"
+        return f"Marca: {self.__marca}\nVoltaje: {self.__voltaje}\nPrecio: ${self.__precio}\nEficiencia: {self.__eficiencia}\nDescuento: {descuento_eficiencia * 100}%\nPrecio total: ${total}"
 
     def get_voltaje(self):
         return self.__voltaje

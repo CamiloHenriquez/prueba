@@ -12,6 +12,9 @@ def cotizar_tvs():
     for i in lista_tvs:
         print(i.calcular_descuento())
 
+def cotizar_consolas():
+    for i in lista_consolas:
+        print(i.calcular_descuentos())
 
 def Registrar_tv():
     marca = input("Ingrese la marca del TV: ")
@@ -21,15 +24,16 @@ def Registrar_tv():
     tamano = float(input("Ingrese el tamaño del TV: "))
     tv = Tv(marca,voltaje,precio,eficiencia,tamano)
     lista_tvs.append(tv)
-
-    print('Se registro su TV con exito')   
+    print('Se registro su TV con exito')
+    print (f'Tamaño: {tamano}') 
+     
     
 
 def Registrar_consola():
     marca = input("Ingrese marca de la consola: ")
-    voltaje = input("Ingrese voltaje de la consola: ")
+    voltaje = int(input("Ingrese voltaje de la consola: "))
     precio = float(input("Ingrese precio de la consola: "))
-    eficiencia = input("Ingrese nivel de eficiencia (A, B, C, D, E, F): ")
+    eficiencia = input("Ingrese nivel de eficiencia (A, B, C, D, E, F): ").upper()
     nombre = input("Ingrese nombre de la consola: ")
     version = input("Ingrese versión(Lite o no): ")
     consola = Consola(marca,voltaje,precio,eficiencia,nombre,version)
@@ -67,11 +71,13 @@ while True:
     opcion = int(input("Selecciona una opción: "))
 
     if opcion == 1:
+        
         Registrar_tv()
         cotizar_tvs()
 
     elif opcion == 2:
         Registrar_consola()
+        cotizar_consolas()
 
     elif opcion == 3:
         Registrar_scooter()
