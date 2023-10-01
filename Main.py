@@ -16,6 +16,15 @@ def cotizar_consolas():
     for i in lista_consolas:
         print(i.calcular_descuentos())
 
+def cotizar_scooters():
+    for i in lista_scooters:
+        print(i.calcular_despacho())
+
+def cotizar_bicicletas():
+    for i in lista_bicicletas:
+        print(i.calcular_despacho())
+
+
 def Registrar_tv():
     marca = input("Ingrese la marca del TV: ")
     voltaje = int(input("Ingrese el voltaje del TV: "))
@@ -41,14 +50,17 @@ def Registrar_consola():
     print("Se registro su consola con exito")
 
 def Registrar_scooter():
-    marca = input("Ingrese marca del scooter: ")
-    aro = input("Ingrese aro del scooter: ")
-    velocidad = input("Ingrese la velocidad del scooter: ")
-    peso = float(input("Ingrese peso del scooter (en kg): "))
-    precio = float(input("Ingrese precio del scooter: "))
-    scooter = Scooter(marca, aro, velocidad, peso, precio)
+    marca = input("Ingrese la marca del scooter: ")
+    voltaje = int(input("Ingrese el voltaje del scooter: "))
+    precio = float(input("Ingrese el precio del scooter: "))
+    eficiencia = input("Ingrese el nivel de eficiencia del scooter (A, B, C, D, E, F): ").upper()
+    aro = float(input("Ingrese numero de aro: "))
+    velocidad = int(input("Ingrese velocidad: "))
+    peso = float(input("Ingrese peso en kg: "))
+    
+    scooter = Scooter(peso,marca,voltaje,precio,eficiencia,aro,velocidad)
     lista_scooters.append(scooter)
-    print("\nScooter registrado exitosamente.")
+    print("Se registro su scooter con exito")
 
 def Registrar_bicicleta():
     aro = float(input("Ingrese el aro de la bicicleta: "))
@@ -81,9 +93,11 @@ while True:
 
     elif opcion == 3:
         Registrar_scooter()
+        cotizar_scooters()
     
     elif opcion == 4:
         Registrar_bicicleta()
+        cotizar_bicicletas()
     
     else:
         print("Opcion no valida, intente nuevamente")

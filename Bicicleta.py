@@ -1,15 +1,22 @@
 from Transporte import Transporte
 
 class Bicicleta(Transporte):
-    def __init__(self, aro, peso, precio, marca):
-        super().__init__("Bicicleta", peso)
+    def __init__(self,aro,peso, precio, marca,tipo='Bicicleta'):
+        super().__init__('Bicicleta', peso)
         self.__aro = aro
         self.__peso = peso
         self.__precio = precio
         self.__marca = marca
 
-    def cotizar(self):
-        pass
+    def calcular_despacho(self):
+        costo_base_despacho = 4000
+        if super().get_tipo() == "Scooter": 
+            costo_total = costo_base_despacho + (300 * self.__peso)
+        elif super().get_tipo() == "Bicicleta":
+            costo_total = costo_base_despacho + (400 * self.__peso)
+        else:
+            costo_total = costo_base_despacho
+        return f'Tipo: {super().get_tipo()}\nAro: {self.__aro}\nPeso: {self.__peso}\nPrecio: {self.__precio}\nMarca: {self.__marca}\nCosto despacho: {costo_total}'
 
     def get_aro(self):
         return self.__aro
