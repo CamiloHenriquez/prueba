@@ -27,10 +27,30 @@ def cotizar_bicicletas():
 
 def Registrar_tv():
     marca = input("Ingrese la marca del TV: ")
-    voltaje = int(input("Ingrese el voltaje del TV: "))
-    precio = float(input("Ingrese el precio del TV: "))
+    while True:
+        try:
+            while True:
+                voltaje = int(input("Ingrese el voltaje del TV: "))
+                if voltaje > 0:
+                    break
+                else:
+                    print('Solo valores positivos')
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
+    while True:
+        try:
+            precio = float(input("Ingrese el precio del TV: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
     eficiencia = input("Ingrese el nivel de eficiencia del TV (A, B, C, D, E, F): ").upper()
-    tamano = float(input("Ingrese el tamaño del TV: "))
+    while True:
+        try:
+            tamano = float(input("Ingrese el tamaño del TV: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
     tv = Tv(marca,voltaje,precio,eficiencia,tamano)
     lista_tvs.append(tv)
     print('Se registro su TV con exito')
@@ -40,32 +60,82 @@ def Registrar_tv():
 
 def Registrar_consola():
     marca = input("Ingrese marca de la consola: ")
-    voltaje = int(input("Ingrese voltaje de la consola: "))
-    precio = float(input("Ingrese precio de la consola: "))
+    while True:
+        try:
+            voltaje = int(input("Ingrese el voltaje de la consola: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
+    while True:
+        try:
+            precio = float(input("Ingrese el precio de la consola: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
     eficiencia = input("Ingrese nivel de eficiencia (A, B, C, D, E, F): ").upper()
     nombre = input("Ingrese nombre de la consola: ")
-    version = input("Ingrese versión(Lite o no): ")
+    version = input("Ingrese versión(Lite o no): ").capitalize()
     consola = Consola(marca,voltaje,precio,eficiencia,nombre,version)
     lista_consolas.append(consola)
     print("Se registro su consola con exito")
 
 def Registrar_scooter():
     marca = input("Ingrese la marca del scooter: ")
-    voltaje = int(input("Ingrese el voltaje del scooter: "))
-    precio = float(input("Ingrese el precio del scooter: "))
+    while True:
+        try:
+            voltaje = int(input("Ingrese el voltaje del scooter: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
+    while True:
+        try:
+            precio = float(input("Ingrese el precio del scooter: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
     eficiencia = input("Ingrese el nivel de eficiencia del scooter (A, B, C, D, E, F): ").upper()
-    aro = float(input("Ingrese numero de aro: "))
-    velocidad = int(input("Ingrese velocidad: "))
-    peso = float(input("Ingrese peso en kg: "))
+    while True:
+        try:
+            aro = float(input("Ingrese numero de aro: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
+    while True:
+        try:
+            velocidad = int(input("Ingrese velocidad: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
+    while True:
+        try:
+            peso = float(input("Ingrese peso en kg: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
     
     scooter = Scooter(peso,marca,voltaje,precio,eficiencia,aro,velocidad)
     lista_scooters.append(scooter)
     print("Se registro su scooter con exito")
 
 def Registrar_bicicleta():
-    aro = float(input("Ingrese el aro de la bicicleta: "))
-    peso = float(input("Ingrese el peso de la bicicleta (en kg): "))
-    precio = float(input("Ingrese el precio de la bicicleta: "))
+    while True:
+        try:
+            aro = float(input("Ingrese el aro de la bicicleta: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
+    while True:
+        try:
+            peso = float(input("Ingrese el peso de la bicicleta (en kg): "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
+    while True:
+        try:
+            precio = float(input("Ingrese el precio de la bicicleta: "))
+            break
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
     marca = input("Ingrese la marca de la bicicleta: ")
     bicicleta = Bicicleta(aro,peso,precio,marca)
     lista_bicicletas.append(bicicleta)
@@ -98,6 +168,10 @@ while True:
     elif opcion == 4:
         Registrar_bicicleta()
         cotizar_bicicletas()
+
+    elif opcion == 5:
+        break
     
     else:
         print("Opcion no valida, intente nuevamente")
+
