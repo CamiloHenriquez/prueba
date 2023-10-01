@@ -34,20 +34,30 @@ def Registrar_tv():
                 if voltaje > 0:
                     break
                 else:
-                    print('Solo valores positivos')
+                    print('Solo valores positivos,reintente')
             break
         except:
             print('No es valor numerico, pruebe nuevamente: ')
     while True:
         try:
-            precio = float(input("Ingrese el precio del TV: "))
+            while True:
+                precio = float(input("Ingrese el precio del TV: "))
+                if precio > 0 :
+                    break
+                else:
+                    print('Solo valores positivos, reintente')
             break
         except:
             print('No es valor numerico, pruebe nuevamente: ')
     eficiencia = input("Ingrese el nivel de eficiencia del TV (A, B, C, D, E, F): ").upper()
     while True:
         try:
-            tamano = float(input("Ingrese el tamaño del TV: "))
+            while True:
+                tamano = float(input("Ingrese el tamaño del TV: "))
+                if tamano > 0 :
+                    break
+                else:
+                    print('Solo valores positivos, reintente')
             break
         except:
             print('No es valor numerico, pruebe nuevamente: ')
@@ -62,14 +72,24 @@ def Registrar_consola():
     marca = input("Ingrese marca de la consola: ")
     while True:
         try:
-            voltaje = int(input("Ingrese el voltaje de la consola: "))
+            while True:
+                voltaje = int(input("Ingrese el voltaje de la consola: "))
+                if voltaje > 0:
+                    break
+                else:
+                    print('Solo valores positivos,reintente')
             break
         except:
             print('No es valor numerico, pruebe nuevamente: ')
     while True:
         try:
-            precio = float(input("Ingrese el precio de la consola: "))
-            break
+            while True:
+                precio = float(input("Ingrese el precio de la consola: "))
+                if precio > 0 :
+                    break
+                else:
+                    print('Solo valores positivos, reintente')
+            break         
         except:
             print('No es valor numerico, pruebe nuevamente: ')
     eficiencia = input("Ingrese nivel de eficiencia (A, B, C, D, E, F): ").upper()
@@ -83,32 +103,57 @@ def Registrar_scooter():
     marca = input("Ingrese la marca del scooter: ")
     while True:
         try:
-            voltaje = int(input("Ingrese el voltaje del scooter: "))
+            while True:
+                voltaje = int(input("Ingrese el voltaje del scooter: "))
+                if voltaje > 0:
+                    break
+                else:
+                    print('Solo valores positivos,reintente')
             break
         except:
             print('No es valor numerico, pruebe nuevamente: ')
     while True:
         try:
-            precio = float(input("Ingrese el precio del scooter: "))
-            break
+            while True:
+                precio = float(input("Ingrese el precio del scooter: "))
+                if precio > 0 :
+                    break
+                else:
+                    print('Solo valores positivos, reintente')
+            break        
         except:
             print('No es valor numerico, pruebe nuevamente: ')
     eficiencia = input("Ingrese el nivel de eficiencia del scooter (A, B, C, D, E, F): ").upper()
     while True:
         try:
-            aro = float(input("Ingrese numero de aro: "))
+            while True:
+                aro = float(input("Ingrese numero de aro: "))
+                if aro > 0 :
+                    break
+                else:
+                    print('Solo valores positivos, reintente')
             break
         except:
             print('No es valor numerico, pruebe nuevamente: ')
     while True:
         try:
-            velocidad = int(input("Ingrese velocidad: "))
+            while True:
+                velocidad = int(input("Ingrese velocidad: "))
+                if velocidad > 0 :
+                    break
+                else:
+                    print('Solo valores positivos, reintente')
             break
         except:
             print('No es valor numerico, pruebe nuevamente: ')
     while True:
         try:
-            peso = float(input("Ingrese peso en kg: "))
+            while True:
+                peso = float(input("Ingrese peso en kg: "))
+                if peso > 0 :
+                    break
+                else:
+                    print('Solo valores positivos, reintente')
             break
         except:
             print('No es valor numerico, pruebe nuevamente: ')
@@ -120,19 +165,34 @@ def Registrar_scooter():
 def Registrar_bicicleta():
     while True:
         try:
-            aro = float(input("Ingrese el aro de la bicicleta: "))
+            while True:
+                aro = float(input("Ingrese el aro de la bicicleta: "))
+                if aro > 0 :
+                    break
+                else:
+                    print('Solo valores positivos, reintente')
+            break           
+        except:
+            print('No es valor numerico, pruebe nuevamente: ')
+    while True:
+        try:
+            while True:
+                peso = float(input("Ingrese el peso de la bicicleta (en kg): "))
+                if peso > 0 :
+                    break
+                else:
+                    print('Solo valores positivos, reintente')
             break
         except:
             print('No es valor numerico, pruebe nuevamente: ')
     while True:
         try:
-            peso = float(input("Ingrese el peso de la bicicleta (en kg): "))
-            break
-        except:
-            print('No es valor numerico, pruebe nuevamente: ')
-    while True:
-        try:
-            precio = float(input("Ingrese el precio de la bicicleta: "))
+            while True:
+                precio = float(input("Ingrese el precio de la bicicleta: "))
+                if precio > 0 :
+                    break
+                else:
+                    print('Solo valores positivos, reintente')
             break
         except:
             print('No es valor numerico, pruebe nuevamente: ')
